@@ -1,0 +1,19 @@
+Host labp2d.udesc
+        Hostname 200.19.106.132
+        IdentityFile /Users/mauricio.pillon/.ssh/id_eradrs.key
+        User labp2d
+
+Host vpn.sd
+        Hostname 10.20.30.180
+        User eradrs 
+	Port 7777
+        IdentityFile /Users/mauricio.pillon/.ssh/id_eradrs.key
+        ProxyJump labp2d.udesc
+
+Host sdumont
+        Hostname login.sdumont.lncc.br
+        User eradrs.24.1
+        IdentityFile /Users/mauricio.pillon/.ssh/id_eradrs.key
+        ProxyJump vpn.sd
+
+
