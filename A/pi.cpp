@@ -2,6 +2,10 @@
 #include <sstream>
 #include <cstring>
 #include <math.h>
+#include <omp.h>
+#include <time.h>
+#include <iomanip>
+
 
 using namespace std;
 
@@ -298,8 +302,11 @@ int main() {
 	long unsigned int d, n;
 
 	cin >> d >> n;
+    clock_t start, end;
+    start = clock();
 
-	char digits[d + 10];
+
+    char digits[d + 10];
 	bignumber output = { digits, d+1, false, 1 };
 
 	char digits_p1[d + 10];
@@ -315,6 +322,7 @@ int main() {
 	mult(output_p1, output_p1, 4);
 	sum(output_p2, &p2, d, n);
 	mult(output_p2, output_p2, 2);
+
 	sum(output_p3, &p3, d, n);
 	sum(output_p4, &p4, d, n);
 
@@ -325,6 +333,13 @@ int main() {
 	convert_to_str(output, d);
 
 	cout << output.digits << endl;
+    end = clock();
 
-	return 0;
+    double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+    cout << "Time taken by program is : " << fixed
+         << time_taken;
+    cout << " sec " << endl;
+
+
+    return 0;
 }
