@@ -331,7 +331,6 @@ int main() {
 	convert_to_str(output, d);
 
 	cout << output.digits << endl;
-    end = clock();
 
 
 
