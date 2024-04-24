@@ -302,7 +302,7 @@ int main() {
 	long unsigned int d, n;
 
 	cin >> d >> n;
-
+ //foo
 
     char digits[d + 10];
 	bignumber output = { digits, d+1, false, 1 };
