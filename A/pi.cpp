@@ -302,8 +302,6 @@ int main() {
 	long unsigned int d, n;
 
 	cin >> d >> n;
-    clock_t start, end;
-    start = clock();
 
 
     char digits[d + 10];
@@ -335,10 +333,7 @@ int main() {
 	cout << output.digits << endl;
     end = clock();
 
-    double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
-    cout << "Time taken by program is : " << fixed
-         << time_taken;
-    cout << " sec " << endl;
+
 
 
     return 0;
